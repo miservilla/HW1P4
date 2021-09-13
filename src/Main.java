@@ -7,10 +7,7 @@ import java.util.Collections;
  */
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> a = new ArrayList<>();//This array needs to be
-        // sorted and
-        // then
-        // the size of T is the largest sum value from a[n] + a[n-1], not pairs.
+        ArrayList<Integer> a = new ArrayList<>(); //Should use int[]
         a.add(2);
         a.add(7);
         a.add(3);
@@ -19,7 +16,7 @@ public class Main {
         a.add(6);
 
         int n = a.size() - 1;
-        Collections.sort(a);
+        Collections.sort(a); //Should use mergesort
         int k = a.get(n) + a.get(n - 1);
         int[] T = new int[k];
         for (int i = 0; i < k; i++) {
