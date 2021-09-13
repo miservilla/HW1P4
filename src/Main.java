@@ -11,12 +11,12 @@ public class Main {
         // sorted and
         // then
         // the size of T is the largest sum value from a[n] + a[n-1], not pairs.
-        a.add(4);
-        a.add(8);
+        a.add(2);
         a.add(7);
-        a.add(9);
         a.add(3);
-        a.add(10);
+        a.add(1);
+        a.add(5);
+        a.add(6);
 
         int n = a.size() - 1;
         Collections.sort(a);
@@ -26,19 +26,19 @@ public class Main {
             T[i] = 0;
         }
         for (int i = 0; i < n - 1; i++) {
-            for (int j = i + 1; j < n; j++) {
+            for (int j = i + 1; j < n + 1; j++) {
                 int m = a.get(i) + a.get(j);
                 T[m] +=1;
             }
         }
         n = 0;
         int p = 0;
-        for (int i = 0; i < k; i++) {
+        for (int i = k - 1; i > 0; i--) {
             if (T[i] > n) {
                 n = T[i];
                 p = i;
             }
         }
-        System.out.println(p + 1);
+        System.out.println(p);
     }
 }
